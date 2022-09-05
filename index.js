@@ -14,7 +14,17 @@ app.use('/', express.static('public'))
 
 //Hvis der kommer klienter til endpointet /hvaler
 app.get('/api/hvaler', (req, res)=>{
-    res.send('Du er kommet til mit hval api')
+    const obj = {
+        'blåhval':{
+            'farve': 'grøn',
+            'vægt': '1/2 bus'
+        }
+    }
+    res.json(obj)
+})
+//Hvis der kommer klienter til endpointet /hvaler
+app.get('/api/dato', (req, res)=>{
+    res.send('Du er kommet til mit dato api')
 })
 
 //serveren skal bare sidde og køre på porten
